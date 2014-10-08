@@ -29,29 +29,9 @@ public class Vue {
 				frame.setPreferredSize(new Dimension(500,500));
 				frame.getContentPane().setLayout(new BorderLayout());
 				
-				// partie haute : joueurs
-				JPanel panelHaut = new JPanel();
-				JLabel labelJoueur1 = new JLabel("Joueur 1");
-				labelJoueur1.setPreferredSize(new Dimension (100,20));
-				JLabel labelJoueur2 = new JLabel("Joueur 2");
-				labelJoueur2.setPreferredSize(new Dimension (100,20));
-				panelHaut.add(labelJoueur1);
-				panelHaut.add(labelJoueur2);
-				frame.add(panelHaut, BorderLayout.NORTH);
-				
-				// partie basse : jeu et historique des parties en cours
-				JPanel panelBas = new JPanel();
-				
-				// jeu
-				JPanel panelJeu = new JPanel();
-				panelBas.add(panelJeu);
-				
-				// historique des parties
-				JPanel panelHisto = new JPanel();
-				panelHisto.setLayout(new BoxLayout(panelHisto, BoxLayout.Y_AXIS));
-				panelBas.add(panelHisto);
-				
-				frame.add(panelHaut, BorderLayout.CENTER);
+				PanelMorpion monPanel = new PanelMorpion();
+								
+				frame.add(monPanel);
 				
 				frame.pack();
 				frame.setVisible(true);

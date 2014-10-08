@@ -30,7 +30,7 @@ public class PanelMorpion extends JPanel {
 	
 		g.drawString("Joueur 1", 20, 20);
 		g.drawString("Joueur 2", 200, 20);
-		
+		g.drawLine(25, y1, 25, y2);
 		g.drawRect(30, 30, 250, 250);
 		
 		// partie haute : joueurs

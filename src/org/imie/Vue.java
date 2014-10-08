@@ -24,23 +24,22 @@ public class Vue {
 			
 			public void run () {
 				
+				
+				//Configuration de la vue
 				JFrame frame = new JFrame("Jeu du Morpion");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setPreferredSize(new Dimension(500,500));
 				frame.getContentPane().setLayout(new BorderLayout());
 				
-				PanelMorpion monPanel = new PanelMorpion();
-								
+				//Ajout PanelMorpion
+				PanelMorpion monPanel = new PanelMorpion(); 
+				ViewMap panelMap = new ViewMap();
+				
 				frame.add(monPanel);
 				
 				frame.pack();
 				frame.setVisible(true);
-				
-				
-				
-				
 			}
-			
 		});
 	}
 }

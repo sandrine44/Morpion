@@ -2,7 +2,7 @@ package org.imie;
 
 public class Model {
 	public Model(){
-		bonjour les amis;
+		Je suis enfin sur le projet;
 	}
 
 }

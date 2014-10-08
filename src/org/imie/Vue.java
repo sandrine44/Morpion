@@ -2,19 +2,24 @@ package org.imie;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.util.Observable;
+import java.util.Observer;
 
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class Vue {
+import org.imie.model.Model;
+import org.imie.view.ViewInfos;
+import org.imie.view.ViewMap;
+import org.imie.view.ViewScore;
 
-	public Vue() {
+public class Vue implements Observer {
+
+	private Model modele;
+	
+	public Vue(Model unModele) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.modele = unModele;
 	}
 
 	
@@ -24,22 +29,30 @@ public class Vue {
 			
 			public void run () {
 				
-				
 				//Configuration de la vue
 				JFrame frame = new JFrame("Jeu du Morpion");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setPreferredSize(new Dimension(500,500));
 				frame.getContentPane().setLayout(new BorderLayout());
 				
-				//Ajout PanelMorpion
-				PanelMorpion monPanel = new PanelMorpion(); 
+				ViewInfos panelInfos = new ViewInfos();
 				ViewMap panelMap = new ViewMap();
+				ViewScore panelScore = new ViewScore();
 				
-				frame.add(monPanel);
+				frame.add(panelInfos, BorderLayout.NORTH);
+				frame.add(panelMap, BorderLayout.CENTER);
+				frame.add(panelScore, BorderLayout.EAST);
 				
 				frame.pack();
 				frame.setVisible(true);
 			}
 		});
+	}
+
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }
